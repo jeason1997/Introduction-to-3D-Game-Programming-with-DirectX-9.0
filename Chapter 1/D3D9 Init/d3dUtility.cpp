@@ -34,23 +34,23 @@ bool d3d::InitD3D(
 	wc.hCursor       = LoadCursor(0, IDC_ARROW);
 	wc.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
 	wc.lpszMenuName  = 0;
-	wc.lpszClassName = "Direct3D9App";
+	wc.lpszClassName = L"Direct3D9App";
 
 	if( !RegisterClass(&wc) ) 
 	{
-		::MessageBox(0, "RegisterClass() - FAILED", 0, 0);
+		::MessageBox(0, L"RegisterClass() - FAILED", 0, 0);
 		return false;
 	}
 		
 	HWND hwnd = 0;
-	hwnd = ::CreateWindow("Direct3D9App", "Direct3D9App", 
+	hwnd = ::CreateWindow(L"Direct3D9App", L"Direct3D9App", 
 		WS_EX_TOPMOST,
 		0, 0, width, height,
 		0 /*parent hwnd*/, 0 /* menu */, hInstance, 0 /*extra*/); 
 
 	if( !hwnd )
 	{
-		::MessageBox(0, "CreateWindow() - FAILED", 0, 0);
+		::MessageBox(0, L"CreateWindow() - FAILED", 0, 0);
 		return false;
 	}
 
@@ -70,7 +70,7 @@ bool d3d::InitD3D(
 
     if( !d3d9 )
 	{
-		::MessageBox(0, "Direct3DCreate9() - FAILED", 0, 0);
+		::MessageBox(0, L"Direct3DCreate9() - FAILED", 0, 0);
 		return false;
 	}
 
@@ -129,7 +129,7 @@ bool d3d::InitD3D(
 		if( FAILED(hr) )
 		{
 			d3d9->Release(); // done with d3d9 object
-			::MessageBox(0, "CreateDevice() - FAILED", 0, 0);
+			::MessageBox(0, L"CreateDevice() - FAILED", 0, 0);
 			return false;
 		}
 	}

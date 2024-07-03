@@ -81,13 +81,13 @@ int WINAPI WinMain(HINSTANCE hinstance,
 	if(!d3d::InitD3D(hinstance,
 		640, 480, true, D3DDEVTYPE_HAL, &Device))
 	{
-		::MessageBox(0, "InitD3D() - FAILED", 0, 0);
+		::MessageBox(0, L"InitD3D() - FAILED", 0, 0);
 		return 0;
 	}
 		
 	if(!Setup())
 	{
-		::MessageBox(0, "Setup() - FAILED", 0, 0);
+		::MessageBox(0, L"Setup() - FAILED", 0, 0);
 		return 0;
 	}
 
